@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import QuizResult from "./quiz-result";
+import { Button } from "@/components/ui/button";
 
 type Question = {
   question: string;
@@ -100,13 +101,13 @@ export default function Quiz() {
       <h2 className="text-xl mb-4">{q.question}</h2>
       <div className="flex flex-col gap-2">
         {shuffled.map((opt) => (
-          <button
+          <Button
             key={opt.text}
             className="px-4 py-2 bg-primary text-primary-foreground rounded"
             onClick={() => handleAnswer(opt.animal)}
           >
             {opt.text}
-          </button>
+          </Button>
         ))}
       </div>
     </div>
